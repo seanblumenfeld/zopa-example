@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+    zopa_example:
+        image: zopa_example
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            - .:/zopa-example
