@@ -14,9 +14,19 @@ class Calculator:
             - Is in an incriment of £100.
         """
         if not self._loan_minimum <= loan_amount <= self._loan_maximum:
-            raise ValueError('loan_amount out of range.')
+            raise ValueError(
+                'loan_amount {0} out of range. The market only'
+                ' accepts loans between £{1} and £{2}'.format(
+                    loan_amount,
+                    self._loan_minimum,
+                    self._loan_maximum,
+                )
+            )
         if not loan_amount % self._valid_loan_incriment == 0:
-            raise ValueError('loan_amount not valid.')
+            raise ValueError(
+                'loan_amount {0} not valid. Loans must be in $100'
+                ' incriments'.format(loan_amount)
+            )
 
     def get_quote(self, loan_amount):
         """Calculate a Quote for a loan based on current market."""

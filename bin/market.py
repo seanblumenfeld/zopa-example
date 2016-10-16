@@ -31,7 +31,10 @@ class Market:
     def available_lenders(self, loan_amount):
         lenders = [l for l in self.lenders if l.available >= loan_amount]
         if not lenders:
-            raise ValueError('No Lenders available.')
+            raise ValueError(
+                'No lenders in the market have available funds'
+                ' to satisfy your requested loan {0}.'.format(loan_amount)
+            )
         return lenders
 
     @property

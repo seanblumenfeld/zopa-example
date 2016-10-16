@@ -14,3 +14,4 @@ This application uses make as its interface.
 * To run run and use the program do:
     * `make run`
     * `./app.py [market_file] [loan_amount]`
+**Note: Please make sure to put copy your market file to within the repository in order for the application to be able to find it. Ideally it should be placed in the data directory of the project**
